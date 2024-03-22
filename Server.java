@@ -44,7 +44,7 @@ public class Server {
 
     public void start() {
         try {
-            server = new ServerSocket(8080);
+            server = new ServerSocket(8080, 50, InetAddress.getLocalHost());
             while (true) {
                 Socket client = server.accept();
                 Thread clientThread = new Thread(() ->
